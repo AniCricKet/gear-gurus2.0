@@ -1,6 +1,7 @@
 ---
 layout: schedule
-title: CSA
-units: "1,2,3,4,5,6,7,8,9"
+title: G-G Timebox
+units: "1,2"
+permalink: /timebox
 course: csa
 ---
