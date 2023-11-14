@@ -1,9 +1,8 @@
 ---
 layout: page
-title: About Me
+title: About
 permalink: /about/
 ---
 
-A Fastpages clone, for CSA - Tirth Thakkar & Haseeb Beg
-
+Trimester 2 Mini-Project
 
