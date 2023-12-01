@@ -1,9 +1,7 @@
 ---
-layout: schedule
-title: G-G Timebox
-units: "1,2"
-permalink: /timebox
-course: csa
+layout: default
+title: Tesla
+permalink: /tesla
 ---
 <style>
 
@@ -21,7 +19,7 @@ td {
 }
 
 .mytable1 {
-  width: 85%;
+  width: 100%;
   margin: auto;
   text-align: center;
   background-color: var(--background-color);
@@ -29,7 +27,7 @@ td {
 }
 
 .mytable {
-  width: 70%;
+  width: 100%;
   margin: auto;
   text-align: center;
   background-color: var(--secondary-color);  
@@ -180,7 +178,7 @@ img {
         <td class = "mytd">Tesla Model 3</td>
         <td class = "mytd">July 28, 2017</td>
         <td class = "mytd">4 door fastback sedan<BR>Over 325,000 reservations after unveiling<BR>World's best selling electric car in history<BR>Global sales passed 1 million<BR>3.1 s 0-60 mph<BR>EPA range of 315 miles<BR>Dual Motor All-Wheel Drive<BR>15" Center Touchscreen</td>
-        <td class = "mytd"><img src = "{{site.baseurl}}/images/Model3.jpeg"></td>
+        <td class = "mytd"><img src = "{{site.baseurl}}/images/Model3.jpg"></td>
     </tr>
     <tr>
         <td class = "mytd">Tesla Model Y</td>
@@ -192,7 +190,7 @@ img {
         <td class = "mytd">Tesla Semi</td>
         <td class = "mytd">December 2022</td>
         <td class = "mytd">All-electric Class 8 semi-trailer truck<BR>2 variants: 300 miles and 500 miles range<BR>4 independent electric motors<BR>Set of hardware sensors<BR>Soon-to-come autopilot mode</td>
-        <td class = "mytd"><img src = "{{site.baseurl}}/images/tesla-semi.jpg" ></td>
+        <td class = "mytd"><img src = "{{site.baseurl}}/images/logo.png" ></td>
     </tr>
     <tr>
         <td class = "mytd">Tesla Roadster</td>
