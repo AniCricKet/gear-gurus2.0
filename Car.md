@@ -27,7 +27,7 @@ permalink: /car
             width: 30%; /* Adjusted width for 4 boxes in a row */
             margin: 10px;
             padding: 5px;
-            background-color: #fff;
+            background-color: #333;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
