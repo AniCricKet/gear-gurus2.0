@@ -1,7 +1,7 @@
 ---
 layout: base
-title: Car
-permalink: /car
+title: Cars
+permalink: /cars
 ---
 
 <html lang="en">
@@ -47,12 +47,17 @@ permalink: /car
             color: #fff;
             border-radius: 4px;
         }
+        .car-brand {
+            margin: auto;
+            width: 50%;
+            /* padding: 10px; */
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2 class="car-brand">BMW</h2>
+    <h1 class="car-brand">BMW</h1>
     <div class="models">
         <!-- Car Box 1 -->
         <div class="car-box">
@@ -85,7 +90,7 @@ permalink: /car
             </div>
         </div>
     </div>
-    <h2 class="car-brand">Chevrolet</h2>
+    <h1 class="car-brand">Chevrolet</h1>
     <div class="models">
         <!-- Car Box 4 -->
         <div class="car-box">
@@ -118,7 +123,7 @@ permalink: /car
             </div>
         </div>
     </div>
-    <h2 class="car-brand">Tesla</h2>
+    <h1 class="car-brand">Tesla</h1>
     <div class="models">
         <!-- Car Box 7 -->
         <div class="car-box">
@@ -151,7 +156,7 @@ permalink: /car
             </div>
         </div>
     </div>
-    <h2 class="car-brand">Lucid</h2>
+    <h1 class="car-brand">Lucid</h1>
     <div class="models">
         <!-- Car Box 10 -->
         <div class="car-box">
