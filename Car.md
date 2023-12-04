@@ -56,194 +56,195 @@ permalink: /cars
 </head>
 <body>
 
+
+
 <div class="container">
-    <h1 class="car-brand">BMW</h1>
+    <!-- Dropdown for sorting -->
+    <div class="sort-dropdown">
+        <label for="sort-by">Sort by:</label>
+        <select id="sort-by">
+            <option value="sortingstat" disabled>Statistic to Sort By</option>
+            <option value="name">Name</option>
+            <option value="topspeed">Top Speed</option>
+            <option value="price">Price</option>
+            <option value="range">Range</option>
+            <option value="capacity">Capacity</option>
+        </select>
+    </div>
     <div class="models">
         <!-- Car Box 1 -->
         <div class="car-box">
             <img src="car1.jpg" alt="Car 1" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
         <!-- Car Box 2 -->
         <div class="car-box">
             <img src="car2.jpg" alt="Car 2" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
         <!-- Car Box 3 -->
         <div class="car-box">
             <img src="car3.jpg" alt="Car 3" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
     </div>
-    <h1 class="car-brand">Chevrolet</h1>
     <div class="models">
         <!-- Car Box 4 -->
         <div class="car-box">
             <img src="car4.jpg" alt="Car 4" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
         <!-- Car Box 5 -->
         <div class="car-box">
             <img src="car5.jpg" alt="Car 5" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
         <!-- Car Box 6 -->
         <div class="car-box">
             <img src="car6.jpg" alt="Car 6" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
     </div>
-    <h1 class="car-brand">Tesla</h1>
     <div class="models">
         <!-- Car Box 7 -->
         <div class="car-box">
             <img src="car7.jpg" alt="Car 7" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
         <!-- Car Box 8 -->
         <div class="car-box">
             <img src="car8.jpg" alt="Car 8" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
         <!-- Car Box 9 -->
         <div class="car-box">
             <img src="car9.jpg" alt="Car 9" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
     </div>
-    <h1 class="car-brand">Lucid</h1>
     <div class="models">
         <!-- Car Box 10 -->
         <div class="car-box">
             <img src="car10.jpg" alt="Car 10" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
         <!-- Car Box 11 -->
         <div class="car-box">
             <img src="car11.jpg" alt="Car 11" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
         <!-- Car Box 12 -->
         <div class="car-box">
             <img src="car12.jpg" alt="Car 12" class="car-image">
             <div class="car-stats">
-                <div class="stat">Model: XYZ</div>
-                <div class="stat">Year: 2023</div>
-                <div class="stat">Mileage: 30,000 miles</div>
+                <div class="stat">Name: XYZ</div>
+                <div class="stat">Top Speed: 2023</div>
                 <div class="stat">Price: $25,000</div>
+                <div class="stat">Range: 30,000 miles</div>
+                <div class="stat">Capacity: $25,000</div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    const apiUrl = `http://localhost:8030/api/cars/`;
-        fetch(apiUrl)
+    // Get all the car boxes
+    const carBoxes = document.querySelectorAll('.car-box');
+
+    // Loop through each car box
+    carBoxes.forEach((box, index) => {
+        // Get the car id from the image alt attribute
+        const carId = box.querySelector('.car-image').alt.split(' ')[1];
+
+        // Make a GET request to the API
+        fetch(`http://localhost:8030/api/car/${carId}`)
             .then(response => response.json())
             .then(data => {
-                const forecast = data.properties.forecast;
-                fetch(forecast)
-                    .then(response => response.json())
-                    .then(forecastData => {
-                        const currentWeather = forecastData.properties.periods[0];
-                        const temperature = currentWeather.temperature;
-                        const weatherConditions = currentWeather.shortForecast;
-                        const precipitation = currentWeather.detailedForecast.includes('precipitation');
-                        // Display temperature, weather conditions, and precipitation
-                        const weatherDataElement = document.getElementById("weatherData");
-                        weatherDataElement.innerHTML = `
-                            <p>Temperature: ${temperature}°F</p>
-                            <p>Weather Conditions: ${weatherConditions}</p>
-                            <p>Chance of Precipitation: ${precipitation ? 'Yes' : 'No'}</p>
-                            <p>${getClothingAdvice(temperature, weatherConditions, precipitation)}</p>
-                        `;
-                            // Show the corresponding image based on temperature range
-                        const hotImage = document.getElementById("hotImage");
-                        const warmImage = document.getElementById("warmImage");
-                        const mildImage = document.getElementById("mildImage");
-                        const coolImage = document.getElementById("coolImage");
-                        const coldImage = document.getElementById("coldImage");
-                        // Hide all images initially
-                        hotImage.style.display = "none";
-                        warmImage.style.display = "none";
-                        mildImage.style.display = "none";
-                        coolImage.style.display = "none";
-                        coldImage.style.display = "none";
-                        if (temperature >= 80) {
-                            hotImage.style.display = "block";
-                        } else if (temperature >= 70) {
-                            warmImage.style.display = "block";
-                        } else if (temperature >= 60) {
-                            mildImage.style.display = "block";
-                        } else if (temperature >= 40) {
-                            coolImage.style.display = "block";
-                        } else {
-                            coldImage.style.display = "block";
-                        }
-                    })
-                    .catch(error => {
-                        console.error("An error occurred:", error);
-                    });
+                // Get the car stats div
+                const carStats = box.querySelector('.car-stats');
+
+                // Update the stats with the data from the API
+                carStats.innerHTML = `
+                    <div class="stat">Name: ${data.name}</div>
+                    <div class="stat">Top Speed: ${data.topspeed}</div>
+                    <div class="stat">Price: $${data.price}</div>
+                    <div class="stat">Range: ${data.range} miles</div>
+                    <div class="stat">Capacity: $${data.capacity}</div>
+                `;
             })
-            .catch(error => {
-                console.error("An error occurred:", error);
-            });
+            .catch(error => console.error('Error:', error));
+    });
 </script>
+
+
+</body>
+</html>
 
 </body>
 </html>
