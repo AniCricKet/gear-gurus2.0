@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sorting Comparison</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        pre {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fibonacci Sorting Comparison</h1>
+
+    <button onclick="runSortingComparison()">Run Sorting Comparison</button>
+
+    <pre id="output"></pre>
+
+    <script>
+        async function runSortingComparison() {
+            const response = await fetch('https://digital-drifters.stu.nighthawkcodingsociety.com/execute_java.php');
+            const backendCode = await response.text();
+
+            const script = document.createElement('script');
+            script.textContent = backendCode;
+            document.head.appendChild(script);
+
+            const sortingComparisonFibo = new SortingComparison();
+
+            const outputElement = document.getElementById('output');
+            outputElement.textContent = '';
+
+            // Display results
+            outputElement.textContent += '=== Sorting Comparison Fibonacci ===\n';
+            
+            // Merge Sort
+            outputElement.textContent += '\nMerge Sort:\n';
+            sortingComparisonFibo.runSortingComparison('mergeSort');
+
+            // Bubble Sort
+            outputElement.textContent += '\nBubble Sort:\n';
+            sortingComparisonFibo.runSortingComparison('bubbleSort');
+
+            // Insertion Sort
+            outputElement.textContent += '\nInsertion Sort:\n';
+            sortingComparisonFibo.runSortingComparison('insertionSort');
+
+            // Selection Sort
+            outputElement.textContent += '\nSelection Sort:\n';
+            sortingComparisonFibo.runSortingComparison('selectionSort');
+        }
+    </script>
+</body>
+</html>
