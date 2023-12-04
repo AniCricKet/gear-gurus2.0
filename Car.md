@@ -52,6 +52,12 @@ permalink: /cars
             width: 50%;
             /* padding: 10px; */
         }
+        .sort-method {
+            font-size: 20px;
+        }
+        .sort-buttons {
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -59,17 +65,17 @@ permalink: /cars
 
 
 <div class="container">
-    <!-- Dropdown for sorting -->
-    <div class="sort-dropdown">
-        <label for="sort-by">Sort by:</label>
-        <select id="sort-by">
-            <option value="sortingstat" disabled>Statistic to Sort By</option>
-            <option value="name">Name</option>
-            <option value="topspeed">Top Speed</option>
-            <option value="price">Price</option>
-            <option value="range">Range</option>
-            <option value="capacity">Capacity</option>
-        </select>
+    <div class="sort-method">
+        <label>Sort by algorithm:</label>
+        <input type="radio" name="algorithm" value="bubble" id="bubble"> <label for="bubble">Bubble</label>
+        <input type="radio" name="algorithm" value="selection" id="selection"> <label for="selection">Selection</label>
+        <input type="radio" name="algorithm" value="insertion" id="insertion"> <label for="insertion">Insertion</label>
+        <input type="radio" name="algorithm" value="merge" id="merge"> <label for="merge">Merge</label>
+    </div>
+    <div class="sort-buttons">
+        <label for="sort-by">Sort by price:</label>
+        <button onclick="sortPrice()">Sort</button>
+        <button onclick="undoSort()">Undo</button>
     </div>
     <div class="models">
         <!-- Car Box 1 -->
@@ -214,7 +220,6 @@ permalink: /cars
 </div>
 
 <script>
-    // Get all the car boxes
     const carBoxes = document.querySelectorAll('.car-box');
 
     // Loop through each car box
@@ -240,11 +245,57 @@ permalink: /cars
             })
             .catch(error => console.error('Error:', error));
     });
+
+    function sortPrice() {
+        carBoxes.forEach((box, index) => {
+            // Get the car id from the image alt attribute
+            const carId = box.querySelector('.car-image').alt.split(' ')[1];
+
+            // Make a GET request to the API
+            fetch(`http://localhost:8030/api/car/${carId}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Get the car stats div
+                    const carStats = box.querySelector('.car-stats');
+
+                    // Update the stats with the data from the API
+                    carStats.innerHTML = `
+                        <div class="stat">Name: ${data.name}</div>
+                        <div class="stat">Top Speed: ${data.topspeed}</div>
+                        <div class="stat">Price: $${data.price}</div>
+                        <div class="stat">Range: ${data.range} miles</div>
+                        <div class="stat">Capacity: $${data.capacity}</div>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    }
+
+    function undoSort() {
+        carBoxes.forEach((box, index) => {
+            // Get the car id from the image alt attribute
+            const carId = box.querySelector('.car-image').alt.split(' ')[1];
+
+            // Make a GET request to the API
+            fetch(`http://localhost:8030/api/car/${carId}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Get the car stats div
+                    const carStats = box.querySelector('.car-stats');
+
+                    // Update the stats with the data from the API
+                    carStats.innerHTML = `
+                        <div class="stat">Name: ${data.name}</div>
+                        <div class="stat">Top Speed: ${data.topspeed}</div>
+                        <div class="stat">Price: $${data.price}</div>
+                        <div class="stat">Range: ${data.range} miles</div>
+                        <div class="stat">Capacity: $${data.capacity}</div>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    }
 </script>
-
-
-</body>
-</html>
 
 </body>
 </html>
