@@ -60,6 +60,10 @@ permalink: /cars
         .sort-buttons {
             font-size: 20px;
         }
+        /* Add this style to your existing styles */
+        .card-transition {
+            transition: transform 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -282,51 +286,50 @@ permalink: /cars
     }
 
     function sortPrice() {
-        priceArray = []; // Reset priceArray before sorting
+        priceArray = [];
         sortedArray = [];
-        swapCounter = 0;
 
         fetchAllCarPrices().then(() => {
             const selectedAlgorithm = document.querySelector('input[name="algorithm"]:checked').value;
-            console.log("Original Array", priceArray);
-            if (selectedAlgorithm === 'bubble') {
-                sortedArray = bubbleSort(priceArray);
-                console.log("Sorted array using Bubble Sort:", sortedArray);
-            } else if (selectedAlgorithm === 'selection') {
-                sortedArray = selectionSort(priceArray);
-                console.log("Sorted array using Selection Sort:", sortedArray);
-            } else if (selectedAlgorithm === 'insertion') {
-                sortedArray = insertionSort(priceArray);
-                console.log("Sorted array using Insertion Sort:", sortedArray);
-            } else if (selectedAlgorithm === 'merge') {
-                sortedArray = mergeSort(priceArray);
-                console.log("Sorted array using Merge Sort:", sortedArray);
-            } else {
-                console.log("Selected sorting algorithm is not supported yet.");
-            }
+	        console.log("Original Array", priceArray);
+	        if (selectedAlgorithm === 'merge') {
+	            sortedArray = mergeSort(priceArray);
+	            console.log("Sorted array using Merge Sort:", sortedArray);
+	        } else {
+	            console.log("Selected sorting algorithm is not supported yet.");
+	        }
 
-        // Rearrange car boxes based on the sorted order
-        const sortedCarBoxes = Array.from(carBoxes).sort((a, b) => {
-            const priceA = parseFloat(a.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
-            const priceB = parseFloat(b.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
-            return sortedArray.indexOf(priceA) - sortedArray.indexOf(priceB);
-        });
+	        const sortedCarBoxes = Array.from(carBoxes).sort((a, b) => {
+	            const priceA = parseFloat(a.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
+	            const priceB = parseFloat(b.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
+	            return sortedArray.indexOf(priceA) - sortedArray.indexOf(priceB);
+	        });
 
-        // Create rows of 3 car boxes and append them back to the DOM
-        const container = document.querySelector('.container');
-        container.innerHTML = '';
-        for (let i = 0; i < sortedCarBoxes.length; i += 3) {
-            const row = document.createElement('div');
-            row.classList.add('models');
-            row.innerHTML = sortedCarBoxes.slice(i, i + 3).map(box => box.outerHTML).join('');
-            container.appendChild(row);
-        }
+	        // Apply transition class to enable smooth animation
+	        sortedCarBoxes.forEach((box, index) => {
+	            box.classList.add('card-transition');
+	        });
 
-        // Call the function to fetch all car prices
-        fetchAllCarPrices();
-        displaySwapCounter();
-        });
-    }
+	        const container = document.querySelector('.container');
+	        container.innerHTML = '';
+	        for (let i = 0; i < sortedCarBoxes.length; i += 3) {
+	            const row = document.createElement('div');
+	            row.classList.add('models');
+	            row.innerHTML = sortedCarBoxes.slice(i, i + 3).map(box => box.outerHTML).join('');
+	            container.appendChild(row);
+	        }
+
+	        // Trigger reflow to apply the transition class
+	        container.offsetHeight;
+
+	        // Remove the transition class to prevent unwanted transitions during subsequent updates
+	        sortedCarBoxes.forEach((box, index) => {
+	            box.classList.remove('card-transition');
+	        });
+
+	        fetchAllCarPrices();
+	    });
+	}
 
     function mergeSort(priceArray) {
         if (priceArray.length <= 1) {
@@ -368,28 +371,7 @@ permalink: /cars
     }
 
     function undoSort() {
-        carBoxes.forEach((box, index) => {
-            // Get the car id from the image alt attribute
-            const carId = box.querySelector('.car-image').alt.split(' ')[1];
-
-            // Make a GET request to the API
-            fetch(`http://localhost:8030/api/car/${carId}`)
-                .then(response => response.json())
-                .then(data => {
-                    // Get the car stats div
-                    const carStats = box.querySelector('.car-stats');
-
-                    // Update the stats with the data from the API
-                    carStats.innerHTML = `
-                        <div class="stat">Name: ${data.name}</div>
-                        <div class="stat">Top Speed: ${data.topspeed}</div>
-                        <div class="stat">Price: $${data.price}</div>
-                        <div class="stat">Range: ${data.range} miles</div>
-                        <div class="stat">Capacity: ${data.capacity}</div>
-                    `;
-                })
-                .catch(error => console.error('Error:', error));
-        });
+        location.reload();
     }
 </script>
 
