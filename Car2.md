@@ -277,53 +277,53 @@ permalink: /cars2
 
         // Wait for all promises to resolve
         await Promise.all(pricePromises);
-
-        console.log(priceArray);
     }
 
     function sortPrice() {
         priceArray = [];
         sortedArray = [];
-        consol.log("test1");
         fetchAllCarPrices().then(() => {
             const selectedAlgorithm = document.querySelector('input[name="algorithm"]:checked').value;
 	        console.log("Original Array", priceArray);
-	        if (selectedAlgorithm === 'merge') {
-	            sortedArray = mergeSort(priceArray);
-	            console.log("Sorted array using Merge Sort:", sortedArray);
-	        } else {
-	            console.log("Selected sorting algorithm is not supported yet.");
-	        }
+	        // if (selectedAlgorithm === 'merge') {
+	        //     sortedArray = mergeSort(priceArray);
+	        //     console.log("Sorted array using Merge Sort:", sortedArray);
+	        // } else {
+	        //     console.log("Selected sorting algorithm is not supported yet.");
+	        // }
 
-	        const sortedCarBoxes = Array.from(carBoxes).sort((a, b) => {
-	            const priceA = parseFloat(a.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
-	            const priceB = parseFloat(b.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
-	            return sortedArray.indexOf(priceA) - sortedArray.indexOf(priceB);
-	        });
+	        // const sortedCarBoxes = Array.from(carBoxes).sort((a, b) => {
+	        //     const priceA = parseFloat(a.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
+	        //     const priceB = parseFloat(b.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
+	        //     return sortedArray.indexOf(priceA) - sortedArray.indexOf(priceB);
+	        // });
 
-	        // Apply transition class to enable smooth animation
-	        sortedCarBoxes.forEach((box, index) => {
-	            box.classList.add('card-transition');
-	        });
+	        // // Apply transition class to enable smooth animation
+	        // sortedCarBoxes.forEach((box, index) => {
+	        //     box.classList.add('card-transition');
+	        // });
 
-	        const container = document.querySelector('.container');
-	        container.innerHTML = '';
-	        for (let i = 0; i < sortedCarBoxes.length; i += 3) {
-	            const row = document.createElement('div');
-	            row.classList.add('models');
-	            row.innerHTML = sortedCarBoxes.slice(i, i + 3).map(box => box.outerHTML).join('');
-	            container.appendChild(row);
-	        }
+	        // const container = document.querySelector('.container');
+	        // container.innerHTML = '';
+	        // for (let i = 0; i < sortedCarBoxes.length; i += 3) {
+	        //     const row = document.createElement('div');
+	        //     row.classList.add('models');
+	        //     row.innerHTML = sortedCarBoxes.slice(i, i + 3).map(box => box.outerHTML).join('');
+	        //     container.appendChild(row);
+	        // }
 
-	        // Trigger reflow to apply the transition class
-	        container.offsetHeight;
+	        // // Trigger reflow to apply the transition class
+	        // container.offsetHeight;
 
-	        // Remove the transition class to prevent unwanted transitions during subsequent updates
-	        sortedCarBoxes.forEach((box, index) => {
-	            box.classList.remove('card-transition');
-	        });
+	        // // Remove the transition class to prevent unwanted transitions during subsequent updates
+	        // sortedCarBoxes.forEach((box, index) => {
+	        //     box.classList.remove('card-transition');
+	        // });
 
-	        fetchAllCarPrices();
+	        // fetchAllCarPrices();
+
+            
+
 	    });
 	}
 
