@@ -1,7 +1,7 @@
 ---
 layout: base
 title: ART
-permalink: /Fibo
+permalink: /fibo
 ---
 <body>
     <h1>Fibonacci Art</h1>
@@ -13,7 +13,7 @@ permalink: /Fibo
         function generateFibonacci() {
             const startTime = performance.now();
 
-            fetch('http://127.0.0.1:8030`/api/fibonacci/generate')
+            fetch('http://127.0.0.1:8030/api/fibonacci/generate')
                 .then(response => response.text())
                 .then(data => {
                     const endTime = performance.now();
