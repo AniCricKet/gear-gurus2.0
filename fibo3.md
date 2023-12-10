@@ -1,7 +1,7 @@
 ---
 layout: base
 title: ART
-permalink: /fibo
+permalink: /art
 ---
 <body>
     <h1>Fibonacci Art</h1>
