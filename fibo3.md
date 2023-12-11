@@ -1,6 +1,6 @@
 ---
 layout: base
-title: ART
+title: F-ART
 permalink: /art
 ---
 <script src="https://cdn.tailwindcss.com"></script>
