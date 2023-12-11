@@ -68,7 +68,7 @@ permalink: /cars2
 </head>
 <body>
 
-
+<div id="sorting-statistics"></div>
 <div class="sort-method">
     <label>Sort by algorithm:</label>
     <input type="radio" name="algorithm" value="bubble" id="bubble"> <label for="bubble">Bubble</label>
@@ -86,7 +86,7 @@ permalink: /cars2
     <div class="models">
         <!-- Car Box 1 -->
         <div class="car-box">
-            <img src="images/bmw_x7.png" alt="Car 1" class="car-image">
+            <img src="images/0.png" alt="Car 1" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -97,7 +97,7 @@ permalink: /cars2
         </div>
         <!-- Car Box 2 -->
         <div class="car-box">
-            <img src="images/bmw_8.png" alt="Car 2" class="car-image">
+            <img src="images/1.png" alt="Car 2" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -108,7 +108,7 @@ permalink: /cars2
         </div>
         <!-- Car Box 3 -->
         <div class="car-box">
-            <img src="images/bmw_i7.png" alt="Car 3" class="car-image">
+            <img src="images/2.png" alt="Car 3" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -121,7 +121,7 @@ permalink: /cars2
     <div class="models">
         <!-- Car Box 4 -->
         <div class="car-box">
-            <img src="images/tesla_3.png" alt="Car 4" class="car-image">
+            <img src="images/3.png" alt="Car 4" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -132,7 +132,7 @@ permalink: /cars2
         </div>
         <!-- Car Box 5 -->
         <div class="car-box">
-            <img src="images/tesla_s.png" alt="Car 5" class="car-image">
+            <img src="images/4.png" alt="Car 5" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -143,7 +143,7 @@ permalink: /cars2
         </div>
         <!-- Car Box 6 -->
         <div class="car-box">
-            <img src="images/tesla_x.png" alt="Car 6" class="car-image">
+            <img src="images/5.png" alt="Car 6" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -156,7 +156,7 @@ permalink: /cars2
     <div class="models">
         <!-- Car Box 7 -->
         <div class="car-box">
-            <img src="images/toyota_camry.png" alt="Car 7" class="car-image">
+            <img src="images/6.png" alt="Car 7" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -167,7 +167,7 @@ permalink: /cars2
         </div>
         <!-- Car Box 8 -->
         <div class="car-box">
-            <img src="images/toyota_sienna.png" alt="Car 8" class="car-image">
+            <img src="images/7.png" alt="Car 8" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -178,7 +178,7 @@ permalink: /cars2
         </div>
         <!-- Car Box 9 -->
         <div class="car-box">
-            <img src="images/toyota_prius.png" alt="Car 9" class="car-image">
+            <img src="images/8.png" alt="Car 9" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -191,7 +191,7 @@ permalink: /cars2
     <div class="models">
         <!-- Car Box 10 -->
         <div class="car-box">
-            <img src="images/honda_crv.png" alt="Car 10" class="car-image">
+            <img src="images/9.png" alt="Car 10" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -202,7 +202,7 @@ permalink: /cars2
         </div>
         <!-- Car Box 11 -->
         <div class="car-box">
-            <img src="images/honda_accord.png" alt="Car 11" class="car-image">
+            <img src="images/10.png" alt="Car 11" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -213,7 +213,7 @@ permalink: /cars2
         </div>
         <!-- Car Box 12 -->
         <div class="car-box">
-            <img src="images/honda_odyssey.png" alt="Car 12" class="car-image">
+            <img src="images/11.png" alt="Car 12" class="car-image">
             <div class="car-stats">
                 <div class="stat">Name: XYZ</div>
                 <div class="stat">Top Speed: 2023</div>
@@ -226,18 +226,19 @@ permalink: /cars2
 </div>
 
 <script>
-    let swapCounter = 0;
+    let carId = 0;
     const carBoxes = document.querySelectorAll('.car-box');
 
     // Loop through each car box
     carBoxes.forEach((box, index) => {
         // Get the car id from the image alt attribute
-        const carId = box.querySelector('.car-image').alt.split(' ')[1];
+        carId = parseInt(box.querySelector('.car-image').alt.split(' ')[1]);
 
         // Make a GET request to the API
         fetch(`http://localhost:8030/api/car/${carId}`)
             .then(response => response.json())
             .then(data => {
+
                 // Get the car stats div
                 const carStats = box.querySelector('.car-stats');
 
@@ -255,77 +256,142 @@ permalink: /cars2
 
     let priceArray = [];
 
-    async function fetchAllCarPrices() {
-        const carIds = Array.from({ length: 12 }, (_, index) => index + 1);
+    // async function fetchAllCarData() {
+    //     const carIds = Array.from({ length: 12 }, (_, index) => index + 1);
 
-        // Map each car ID to a promise that fetches its price
-        const pricePromises = carIds.map(async (carId) => {
-            const url = `http://localhost:8030/api/car/${carId}`;
+    //     const carDataPromises = carIds.map(async (carId) => {
+    //         carIndex = parseInt(carId)-1;
+            
+    //         const url = `http://localhost:8030/api/sortedids/${carIndex}`;
 
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
+    //         try {
+    //             const response = await fetch(url);
+    //             const data = await response.json();
+    //             alert(data);
+    //             return { id: carId, ...data };
+    //         } catch (error) {
+    //             console.error(`Error fetching data for car ID ${carId}: ${error.message}`);
+    //             alert(error.message);
+    //             return null;
+    //         }
+    //     });
 
-                // Assuming the response has a 'price' property
-                const carPrice = data.price;
+    //     return Promise.all(carDataPromises);
+    // }
+    async function fetchAllCarData() {
+    const carIds = Array.from({ length: 12 }, (_, index) => index + 1);
 
-                priceArray.push(carPrice);
-            } catch (error) {
-                console.error(`Error fetching data for car ID ${carId}: ${error.message}`);
+    const carDataPromises = carIds.map(async (carId) => {
+        const carIndex = carId - 1;
+        const url = `http://localhost:8030/api/sortedids/${carIndex}`;
+
+        try {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-        });
 
-        // Wait for all promises to resolve
-        await Promise.all(pricePromises);
+            const data = await response.json();
+            console.log(`Data received for car ID ${carId}:`, data);
+            return { id: carId, ...data };
+        } catch (error) {
+            console.error(`Error fetching data for car ID ${carId}:`, error);
+            return null;
+        }
+    });
+
+    try {
+        const carDataArray = await Promise.all(carDataPromises);
+        console.log("All data fetched successfully:", carDataArray);
+        return carDataArray;
+    } catch (error) {
+        console.error("Error fetching car data:", error);
+        return null;
     }
+}
+
+
+    let carIndex = 0;
 
     function sortPrice() {
-        priceArray = [];
-        sortedArray = [];
-        fetchAllCarPrices().then(() => {
-            const selectedAlgorithm = document.querySelector('input[name="algorithm"]:checked').value;
-	        console.log("Original Array", priceArray);
-	        // if (selectedAlgorithm === 'merge') {
-	        //     sortedArray = mergeSort(priceArray);
-	        //     console.log("Sorted array using Merge Sort:", sortedArray);
-	        // } else {
-	        //     console.log("Selected sorting algorithm is not supported yet.");
-	        // }
+        fetchAllCarData().then((carDataArray) => {
+            //const sortedCars = carDataArray.slice().sort((a, b) => a.price - b.price);
+            const sortedCars = carDataArray;
+            //alert(sortedCars);
+            carBoxes.forEach((box, index) => {
+                //alert("foreach");
+                carIndex = sortedCars[index].id - 1;
+                const carData = sortedCars[index].car;
 
-	        // const sortedCarBoxes = Array.from(carBoxes).sort((a, b) => {
-	        //     const priceA = parseFloat(a.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
-	        //     const priceB = parseFloat(b.querySelector('.stat:nth-child(3)').textContent.split('$')[1].replace(/,/g, ''));
-	        //     return sortedArray.indexOf(priceA) - sortedArray.indexOf(priceB);
-	        // });
+                const carStats = box.querySelector('.car-stats');
+                const carImage = box.querySelector('.car-image');
 
-	        // // Apply transition class to enable smooth animation
-	        // sortedCarBoxes.forEach((box, index) => {
-	        //     box.classList.add('card-transition');
-	        // });
+                carStats.innerHTML = `
+                    <div class="stat">Name: ${carData.name}</div>
+                    <div class="stat">Top Speed: ${carData.topspeed} mph</div>
+                    <div class="stat">Price: $${carData.price}</div>
+                    <div class="stat">Range: ${carData.range} miles</div>
+                    <div class="stat">Capacity: ${carData.capacity} people</div>
+                `;
 
-	        // const container = document.querySelector('.container');
-	        // container.innerHTML = '';
-	        // for (let i = 0; i < sortedCarBoxes.length; i += 3) {
-	        //     const row = document.createElement('div');
-	        //     row.classList.add('models');
-	        //     row.innerHTML = sortedCarBoxes.slice(i, i + 3).map(box => box.outerHTML).join('');
-	        //     container.appendChild(row);
-	        // }
 
-	        // // Trigger reflow to apply the transition class
-	        // container.offsetHeight;
+                carImage.src = `images/${carIndex}.png`;
+                carImage.alt = `Car ${carIndex + 1}`;
+            });
 
-	        // // Remove the transition class to prevent unwanted transitions during subsequent updates
-	        // sortedCarBoxes.forEach((box, index) => {
-	        //     box.classList.remove('card-transition');
-	        // });
+            // Update sorting statistics table
+            updateSortingStatistics(sortedCars);
+        })
+        
 
-	        // fetchAllCarPrices();
+    }
 
-            
+    function updateSortingStatistics(sortedCars) {
+        const sortingStatisticsDiv = document.getElementById('sorting-statistics');
+        const sortingStatisticsTable = document.createElement('table');
+        // alert(sortedCars[0].bstatistics);
+        sortingStatisticsTable.innerHTML = `
+            <tr>
+                <th>Algorithm</th>
+                <th>Iterations</th>
+                <th>Comparisons</th>
+                <th>Merges/Swaps</th>
+                <th>Execution Time (ns)</th>
+            </tr>
+            <tr>
+                <td>Bubble</td>
+                <td>${sortedCars[0].bstatistics?.iterations || ''}</td>
+                <td>${sortedCars[0].bstatistics?.comparisons || ''}</td>
+                <td>${sortedCars[0].bstatistics?.mergesOrSwaps || ''}</td>
+                <td>${sortedCars[0].bstatistics?.executionTime || ''}</td>
+            </tr>
+            <tr>
+                <td>Selection</td>
+                <td>${sortedCars[0].sstatistics?.iterations || ''}</td>
+                <td>${sortedCars[0].sstatistics?.comparisons || ''}</td>
+                <td>${sortedCars[0].sstatistics?.mergesOrSwaps || ''}</td>
+                <td>${sortedCars[0].sstatistics?.executionTime || ''}</td>
+            </tr>
+            <tr>
+                <td>Insertion</td>
+                <td>${sortedCars[0].istatistics?.iterations || ''}</td>
+                <td>${sortedCars[0].istatistics?.comparisons || ''}</td>
+                <td>${sortedCars[0].istatistics?.mergesOrSwaps || ''}</td>
+                <td>${sortedCars[0].istatistics?.executionTime || ''}</td>
+            </tr>
+            <tr>
+                <td>Merge</td>
+                <td>${sortedCars[0].mstatistics?.iterations || ''}</td>
+                <td>${sortedCars[0].mstatistics?.comparisons || ''}</td>
+                <td>${sortedCars[0].mstatistics?.mergesOrSwaps || ''}</td>
+                <td>${sortedCars[0].mstatistics?.executionTime || ''}</td>
+            </tr>
+        `;
 
-	    });
-	}
+        sortingStatisticsDiv.innerHTML = ''; // Clear previous content
+        sortingStatisticsDiv.appendChild(sortingStatisticsTable);
+    }
 
     function undoSort() {
         location.reload();
