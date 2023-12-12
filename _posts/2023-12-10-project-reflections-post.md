@@ -1,7 +1,6 @@
 ---
 toc: true
 comments: false
-hide: true
 layout: post
 type: tangibles
 title: Project Reflection
