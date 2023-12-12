@@ -69,13 +69,13 @@ permalink: /cars2
 <body>
 
 <div id="sorting-statistics"></div>
-<div class="sort-method">
+<!-- <div class="sort-method">
     <label>Sort by algorithm:</label>
     <input type="radio" name="algorithm" value="bubble" id="bubble"> <label for="bubble">Bubble</label>
     <input type="radio" name="algorithm" value="selection" id="selection"> <label for="selection">Selection</label>
     <input type="radio" name="algorithm" value="insertion" id="insertion"> <label for="insertion">Insertion</label>
     <input type="radio" name="algorithm" value="merge" id="merge"> <label for="merge">Merge</label>
-</div>
+</div> -->
 <div class="sort-buttons">
     <label for="sort-by">Sort by price:</label>
     <button onclick="sortPrice()">Sort</button>
