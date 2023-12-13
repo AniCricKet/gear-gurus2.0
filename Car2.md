@@ -279,37 +279,37 @@ permalink: /cars2
     //     return Promise.all(carDataPromises);
     // }
     async function fetchAllCarData() {
-    const carIds = Array.from({ length: 12 }, (_, index) => index + 1);
+        const carIds = Array.from({ length: 12 }, (_, index) => index + 1);
 
-    const carDataPromises = carIds.map(async (carId) => {
-        const carIndex = carId - 1;
-        const url = `http://localhost:8030/api/sortedids/${carIndex}`;
+        const carDataPromises = carIds.map(async (carId) => {
+            const carIndex = carId - 1;
+            const url = `http://localhost:8030/api/sortedids/${carIndex}`;
+
+            try {
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log(`Data received for car ID ${carId}:`, data);
+                return { id: carId, ...data };
+            } catch (error) {
+                console.error(`Error fetching data for car ID ${carId}:`, error);
+                return null;
+            }
+        });
 
         try {
-            const response = await fetch(url);
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            console.log(`Data received for car ID ${carId}:`, data);
-            return { id: carId, ...data };
+            const carDataArray = await Promise.all(carDataPromises);
+            console.log("All data fetched successfully:", carDataArray);
+            return carDataArray;
         } catch (error) {
-            console.error(`Error fetching data for car ID ${carId}:`, error);
+            console.error("Error fetching car data:", error);
             return null;
         }
-    });
-
-    try {
-        const carDataArray = await Promise.all(carDataPromises);
-        console.log("All data fetched successfully:", carDataArray);
-        return carDataArray;
-    } catch (error) {
-        console.error("Error fetching car data:", error);
-        return null;
     }
-}
 
 
     let carIndex = 0;
@@ -336,7 +336,8 @@ permalink: /cars2
                 `;
 
 
-                carImage.src = `images/${carIndex}.png`;
+                carImage.src = `images/${carData.id - 1}.png`;
+                // console.log(carIndex);
                 carImage.alt = `Car ${carIndex + 1}`;
             });
 
